@@ -504,6 +504,12 @@ fn spawn_community_snapshot_refresh(steam_root: &Path, state: &ConfigState) {
 ///
 /// 全程网络在独立线程, 不阻塞 init; 结果写 [`UPDATE_STATUS`] 给配置页, 并进 host.log.
 fn spawn_update_worker(steam_root: &Path, state: &ConfigState) {
+    // PATCH-001: 个人补丁版必须手动同步上游并重建，禁止官方 Release 覆盖自编译 DLL。
+    if cfg!(feature = "personal-build") {
+        set_update_status("个人补丁版：自动更新已禁用");
+        append_host_log(steam_root, "update=disabled reason=personal_build");
+        return;
+    }
     let config = state.host().update;
     if !config.enabled {
         set_update_status("已关闭");

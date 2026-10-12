@@ -4,9 +4,9 @@ on:
   # 所有人(除 owner)合入 master 走 PR, PR 跑完整检查;
   # owner 直接 push master 也触发完整检查做反馈.
   push:
-    branches: [master]
+    branches: [master, personal-patches]
   pull_request:
-    branches: [master]
+    branches: [master, personal-patches]
 
 env:
   CARGO_TERM_COLOR: always

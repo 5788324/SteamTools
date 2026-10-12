@@ -13,11 +13,14 @@ name = "stbase"
 
 [features]
 default = [
+    "personal-build",
     "download-manifest",
     "download-key",
     "download-token",
     "download-request-code",
 ]
+# 个人补丁版禁止应用内自动覆盖 DLL；仅在 personal-patches 默认开启。
+personal-build = []
 download-manifest = ["stt-steamclient/download-manifest"]
 download-key = ["stt-steamclient/download-key"]
 download-token = ["stt-steamclient/download-token"]
