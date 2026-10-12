@@ -17,6 +17,8 @@
 | --- | --- | --- | --- | --- |
 | PATCH-001 | Active / 待 CI、实机验证 | `personal-build` 默认构建特性使个人版跳过上游 Release 自动更新，避免覆盖补丁 | `stt-host` | 上游提供可靠的个人构建保护/可控更新通道，并经测试验证 |
 | INFRA-001 | Active / 待 CI 验证 | CI 同时覆盖 `personal-patches` 分支 | `.github/workflows/ci.yml` | 上游工作流本身支持该分支 |
+| PATCH-002 | Research / 未开发 | 游戏无法自动更新：Manifest 固定、检测、清单刷新、请求码错误 | [调查单](docs/personal/PATCH-002_GAME_UPDATE.md) | 上游完整修复并经实机回归验证 |
+| PATCH-003 | Research / 未开发 | 云存档无法上传：原生权限、状态诊断、独立备份与 CloudRedirect 兼容研究 | [调查单](docs/personal/PATCH-003_CLOUD_SAVE.md) | 上游完整修复并经实机回归验证 |
 
 ## 上游同步流程
 
